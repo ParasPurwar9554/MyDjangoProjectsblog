@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+Out blog page home page
+{% endblock %}
+
+{% block body_content %}
+    <section>
+        <header>
+            <h1>Welcome My Personal Blog Post</h1>
+            <h2>I write a python content and relative stuff!</h2>
+            <img src="{% static 'blogs/images/author.png' %}" alt="Author" height="250" width="250" />
+        </header>
+    </section>
+    <section>
+        <h2>Featured Posts</h2>
+        <ul>
+       {% for blog in blogs %}
+          {% include 'blogs/includes/posts.html' %}
+       {% endfor %}
+    </ul>
+    </section>
+    <section>
+        <h2>About the Author</h2>
+        <p>The Author has 8+ years of experiance in software and application developer.
+             He makes also content on Python & Django</p>
+             <p>Contact to the author contact@gmail.com</p>
+    </section>
+ {% endblock %}        
+    

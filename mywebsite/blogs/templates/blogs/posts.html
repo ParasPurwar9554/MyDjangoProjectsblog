@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{{blog_name|title}}
+{% endblock %}
+
+{% block body_content %}
+   {% include "blogs/includes/header.html" %}
+    <h1>{{blog_name|title}} blog post</h1>
+    {% if blog_text %}
+     <h2>{{blog_text}}</h2>
+    {% else %} 
+    <h2>Blog in In-progress</h2>
+    {% endif %}
+ {% endblock %}     
